@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Windows 11 Launcher for Android</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Windows 11 Desktop Area -->
+  <div class="win11-desktop" id="desktop">
+    <!-- Desktop Quick Shortcuts Grid -->
+    <div class="desktop-grid" id="desktop-grid">
+      <!-- Rendered by app.js -->
+    </div>
+  </div>
+
+  <!-- Windows 11 Widgets Board Side Panel -->
+  <div class="widgets-board" id="widgets-board">
+    <div class="widgets-header">
+      <h3>🌤️ Windows 11 Widgets</h3>
+      <button class="win-close-btn" onclick="toggleWidgetsBoard()">✕</button>
+    </div>
+    
+    <!-- Live Weather Card -->
+    <div class="widget-card weather-card">
+      <div class="weather-temp">26°C</div>
+      <div class="weather-desc">☀️ Clear & Sunny • Chicago</div>
+    </div>
+
+    <!-- System Status Card -->
+    <div class="widget-card status-card">
+      <div class="card-title">💻 System Specs</div>
+      <div class="info-row" id="device-model-val">Model: Android Phone</div>
+      <div class="info-row" id="device-sdk-val">Android Version: 14</div>
+      <div class="info-row">Storage: 128 GB Free</div>
+    </div>
+
+    <!-- Quick Actions Card -->
+    <div class="widget-card actions-card">
+      <div class="card-title">⚡ Quick Actions</div>
+      <button class="win-action-btn" onclick="setDefaultHomeLauncher()">🏠 Set as Default Home App</button>
+      <button class="win-action-btn" onclick="openWallpaperPicker()">🖼️ Change Desktop Wallpaper</button>
+      <button class="win-action-btn" onclick="openSystemSettings()">⚙️ Android Settings</button>
+    </div>
+  </div>
+
+  <!-- Windows 11 Start Menu Modal -->
+  <div class="modal-overlay" id="start-menu-modal">
+    <div class="win11-start-card">
+      
+      <!-- Start Menu Search Bar -->
+      <div class="start-search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="start-search-input" placeholder="Type here to search apps, settings, or web..." autocomplete="off">
+        <button class="clear-btn" id="start-search-clear" style="display:none;" onclick="clearStartSearch()">✕</button>
+      </div>
+
+      <!-- Pinned & All Apps Section Header -->
+      <div class="start-nav-row">
+        <span class="section-title" id="section-label">Pinned Apps</span>
+        <button class="all-apps-btn" id="all-apps-toggle" onclick="toggleAllAppsView()">All Apps ›</button>
+      </div>
+
+      <!-- Start Menu App Grid -->
+      <div class="start-apps-grid" id="start-apps-grid">
+        <div class="loading-text">Loading installed apps...</div>
+      </div>
+
+      <!-- Start Menu Footer User Profile & Power Button -->
+      <div class="start-footer">
+        <div class="user-profile">
+          <div class="user-avatar">👤</div>
+          <div class="user-name" id="user-name-display">Windows 11 User</div>
+        </div>
+        <div class="footer-right">
+          <button class="power-btn" title="System Settings" onclick="openSystemSettings()">⚙️</button>
+          <button class="power-btn" title="Default Launcher" onclick="setDefaultHomeLauncher()">🏠</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- App Info Context Modal -->
+  <div class="modal-overlay" id="app-modal">
+    <div class="win11-dialog-card">
+      <div class="dialog-header">
+        <h3 id="app-modal-title">App Details</h3>
+        <button class="win-close-btn" onclick="closeAppModal()">✕</button>
+      </div>
+      <div class="dialog-body">
+        <div id="app-modal-icon" class="dialog-icon-container"></div>
+        <p id="app-modal-pkg" class="dialog-pkg-name"></p>
+        <div class="dialog-actions">
+          <button class="win-btn primary" id="btn-launch-modal">🚀 Launch App</button>
+          <button class="win-btn secondary" id="btn-info-modal">ℹ️ App Settings</button>
+          <button class="win-btn danger" id="btn-uninstall-modal">🗑️ Uninstall App</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Windows 11 Bottom Taskbar -->
+  <div class="win11-taskbar">
+    <!-- Centered Taskbar App Icons -->
+    <div class="taskbar-center">
+      <button class="tb-btn start-btn" title="Start Menu" onclick="toggleStartMenu()">
+        <svg class="win-logo-svg" viewBox="0 0 88 88" width="22" height="22">
+          <path fill="#0078D4" d="M0 0h41.6v41.6H0zM46.4 0H88v41.6H46.4zM0 46.4h41.6V88H0zM46.4 46.4H88V88H46.4z"/>
+        </svg>
+      </button>
+      <button class="tb-btn" title="Search" onclick="toggleStartMenu(true)">🔍</button>
+      <button class="tb-btn" title="Widgets Board" onclick="toggleWidgetsBoard()">🌤️</button>
+      <button class="tb-btn" title="File Explorer" onclick="launchFileExplorer()">📁</button>
+      <button class="tb-btn" title="Chrome Browser" onclick="launchChrome()">🌐</button>
+      <button class="tb-btn" title="Settings" onclick="openSystemSettings()">⚙️</button>
+    </div>
+
+    <!-- Right System Tray -->
+    <div class="system-tray" onclick="toggleWidgetsBoard()">
+      <span class="tray-icon">📶</span>
+      <span class="tray-icon" id="tray-battery">🔋 85%</span>
+      <span class="tray-clock" id="tray-clock">12:00 PM</span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
