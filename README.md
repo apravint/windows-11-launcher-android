@@ -1,70 +1,30 @@
-# 📱 Omarchy Launcher for Android (`omarchy-launcher-android`)
+# 🪟 Windows 11 Android Launcher (`v1.1.0`)
 
-> **Minimalist, Glassmorphic Tiling Home Screen Launcher & AI Assistant Suite for Android**
+[![GitHub Release](https://img.shields.io/github/v/release/apravint/windows-11-launcher-android?color=blue&label=Latest%20Release)](https://github.com/apravint/windows-11-launcher-android/releases/tag/v1.1.0)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Android Min SDK](https://img.shields.io/badge/Android-7.0%2B%20(API%2024)-brightgreen)](https://developer.android.com)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Android](https://img.shields.io/badge/platform-Android%208.0%2B-green.svg)]()
-[![Theme](https://img.shields.io/badge/themes-Omarchy%2022-purple.svg)]()
+**Windows 11 Launcher for Android** brings the sleek, modern Fluent Mica design system of Windows 11 to your Android smartphone or tablet.
 
-`omarchy-launcher-android` is an open-source Android Home Screen launcher inspired by **Omarchy Linux**, Nothing OS, and Niagara Launcher — featuring glassmorphic app cards, quick AI command prompt integration, fast Termux launching, and live theme switching.
-
-<p align="center">
-  <img src="assets/preview.jpg" alt="Omarchy Launcher Android Preview" width="380" />
-</p>
+Developed by **Ayyappa Pravin** (<apravint@gmail.com>).
 
 ---
 
 ## ✨ Features
 
-- ⚡ **Built-in AI Assistant Bar**: Enter quick prompts directly on your Android home screen to execute queries via local AI or Termux daemons.
-- 🔮 **Glassmorphic App Cards & Tiling Grid**: Categorized app launcher (Dev & AI, System, Media) with fast fuzzy search.
-- 🎨 **Omarchy 22 Theme Palette System**: Switch live between Tokyo Night, Catppuccin Mocha, Nord, Cyberpunk, and Gruvbox.
-- 📱 **Native System Home Launcher Intent**: Sets as default Android system launcher (`CATEGORY_HOME`).
+- 🪟 **Centered Windows 11 Taskbar**: Translucent taskbar featuring the Start Menu button, Search bar, Widgets, and Quick Settings indicators.
+- 💻 **Windows 11 Start Menu**: Pinned Apps grid, All Apps drawer, User Account badge, and Power options (`Power Off`, `Restart`).
+- 📊 **Widgets & Telemetry Panel**: Live calendar widget, weather status, and system battery monitor.
+- 🎨 **Fluent Mica Design System**: Backdrop blur filters, smooth elevation shadows, and Segoe UI / Outfit typography.
+- 🛡️ **Universal Compatibility**: 4-Byte ZipAligned & V1/V2/V3 signed for Motorola Edge, Pixel, Samsung, and Xiaomi devices running Android 14/15.
 
 ---
 
-## 🚀 Building & Testing
+## 📦 Direct Download
 
-### 1. Web / Browser Test
-Open `web/index.html` in any browser to test the interactive launcher interface.
-
-### 2. Automated GitHub Actions APK Build
-This repository includes a pre-configured GitHub Actions CI/CD workflow (`.github/workflows/build-apk.yml`).
-
-- **Automatic Build & Release**: Push a version tag (e.g. `git tag v1.0.0 && git push origin v1.0.0`) to automatically trigger APK compilation and publish a GitHub Release with the downloadable `.apk` file attached.
-- **Manual Trigger**: Go to the **Actions** tab on GitHub -> Select **Build & Release Omarchy Android Launcher APK** -> Click **Run workflow**.
-
-### 3. Local Android APK Build
-Build using Gradle wrapper or Android Studio:
-
-```bash
-cd android
-./gradlew assembleRelease
-```
-The compiled APK will be located at `android/app/build/outputs/apk/release/app-release.apk`.
-
----
-
-## 🌲 Repository Structure
-
-```text
-omarchy-launcher-android/
-├── android/
-│   └── app/src/main/
-│       ├── AndroidManifest.xml   # System HOME launcher intent
-│       └── java/.../MainActivity.kt
-├── web/
-│   ├── index.html                # Launcher Glassmorphic UI
-│   ├── styles.css                # Mobile design system
-│   └── app.js                    # App grid & AI prompt logic
-├── assets/
-│   └── preview.jpg
-├── README.md
-└── LICENSE
-```
+Download the compiled APK: 🪟 [Windows11Launcher.apk](https://github.com/apravint/windows-11-launcher-android/releases/download/v1.1.0/Windows11Launcher.apk)
 
 ---
 
 ## 📄 License
-
-Distributed under the MIT License. Built by **Pravin Tamilan ([@apravint](https://github.com/apravint))**.
+Licensed under the [MIT License](LICENSE).
